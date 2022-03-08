@@ -10,7 +10,7 @@ provider "aws" {
 
 ...
 
-module "s3_bucket" {
+module "rds_pg" {
   source  = "github.com/lhernerremon/modules-terraform-rds"
   project_name = "project"
   project_environment = "develop"
