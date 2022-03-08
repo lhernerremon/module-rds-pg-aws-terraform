@@ -14,6 +14,7 @@ module "rds_pg" {
   source  = "github.com/lhernerremon/modules-terraform-rds"
   project_name = "project"
   project_environment = "develop"
+  initial_db_name = "db_initial"
 }
 ```
 
