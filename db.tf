@@ -11,8 +11,8 @@ resource "aws_db_instance" "db_rds_pg" {
   instance_class = var.instance_class
   allocated_storage = 20
   skip_final_snapshot = true
-  publicly_accessible = true
-  vpc_security_group_ids = [aws_security_group.security_group.id]
+  publicly_accessible = false
+  vpc_security_group_ids = [aws_security_group.security_group_rds.id]
   port = "5432"
   username = "postgres"
   password = random_password.master_password.result
