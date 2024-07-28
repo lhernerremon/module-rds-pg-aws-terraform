@@ -17,12 +17,12 @@ variable "source_security_group_id" {
 
 variable "engine_version" {
   type    = string
-  default = "12.9"
+  default = "15.7"
 }
 
 variable "instance_class" {
   type    = string
-  default = "db.t2.micro"
+  default = "db.t3.micro"
 }
 
 variable "allocated_storage" {
