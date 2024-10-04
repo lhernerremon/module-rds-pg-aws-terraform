@@ -11,13 +11,18 @@ variable "initial_db_name" {
   type = string
 }
 
+variable "initial_username" {
+  type    = string
+  default = "postgres"
+}
+
 variable "source_security_group_id" {
   type = string
 }
 
 variable "engine_version" {
   type    = string
-  default = "15.7"
+  default = "16"
 }
 
 variable "instance_class" {

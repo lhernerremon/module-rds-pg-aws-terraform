@@ -19,7 +19,7 @@ resource "aws_db_instance" "db_rds_pg" {
   vpc_security_group_ids = [aws_security_group.security_group_rds.id]
 
   port     = "5432"
-  username = "postgres"
+  username = var.initial_username
   password = random_password.master_password.result
 
 
