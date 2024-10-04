@@ -15,11 +15,11 @@ module "ec2_instance" {
 }
 
 module "rds_pg" {
-  source  = "github.com/lhernerremon/module-rds-pg-aws-terraform?ref=v1.0.0"
+  source  = "github.com/lhernerremon/module-rds-pg-aws-terraform?ref=v1.0.1"
   project_name = "project"
   project_environment = "develop"
   initial_db_name = "db_initial"
-  engine_version = "15.7"
+  engine_version = "16"
   instance_class = "db.t3.micro"
   
   source_security_group_id = module.ec2_instance.security_group_id # module.<name_module_ec2>.<output_security_group_id>
@@ -34,6 +34,7 @@ module "rds_pg" {
 | project_name | Project's name | `string` | `""` | yes |
 | project_environment | Project environment | `string` | `""` | yes |
 | initial_db_name | Name of the initial database to use | `string` | `""` | yes |
+| initial_username | Name of the initial username to use | `string` | `"postgres"` | no |
 | source_security_group_id | Security group ID to allow access | `string` | `""` | yes |
 | engine_version | PostgreSQL version | `string` | `"15.7"` | no |
 | instance_class | DB Instance Type | `string` | `"db.t3.micro"` | no |
