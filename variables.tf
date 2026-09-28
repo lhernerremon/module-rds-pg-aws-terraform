@@ -7,13 +7,19 @@ variable "project_environment" {
   default = "development"
 }
 
+variable "identifier" {
+  type    = string
+  default = null
+}
+
 variable "initial_db_name" {
-  type = string
+  type     = string
+  nullable = false
 }
 
 variable "initial_username" {
-  type    = string
-  default = "postgres"
+  type     = string
+  nullable = false
 }
 
 variable "source_security_group_id" {
@@ -22,17 +28,37 @@ variable "source_security_group_id" {
 
 variable "engine_version" {
   type    = string
-  default = "16"
+  default = "17"
 }
 
 variable "instance_class" {
   type    = string
-  default = "db.t3.micro"
+  default = "db.t4g.micro"
+}
+
+variable "storage_type" {
+  type    = string
+  default = "gp3"
 }
 
 variable "allocated_storage" {
   type    = number
   default = 20
+}
+
+variable "max_allocated_storage" {
+  type    = number
+  default = 100
+}
+
+variable "storage_encrypted" {
+  type    = bool
+  default = true
+}
+
+variable "deletion_protection" {
+  type    = bool
+  default = true
 }
 
 variable "backup_retention_period" {
@@ -58,5 +84,5 @@ variable "publicly_accessible" {
 
 variable "length_password" {
   type    = number
-  default = 16
+  default = 22
 }
